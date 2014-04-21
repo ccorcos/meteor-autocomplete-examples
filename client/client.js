@@ -1,4 +1,4 @@
-Template.ta.rendered = function() {
+Template.typeahead.rendered = function() {
     Deps.autorun(function() {
         $("#tags").autocomplete({
             source: _.pluck(Items.find().fetch(), "name")
@@ -35,7 +35,7 @@ okCancelEvents = function(selector, callbacks) {
     return events;
 };
 
-Template.ta.events(okCancelEvents(
+Template.typeahead.events(okCancelEvents(
     '#tags', {
         ok: function(text, evt) {
             console.log("ok: " + text)
